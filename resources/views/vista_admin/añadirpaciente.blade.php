@@ -28,78 +28,87 @@
     <section id="main-section">
         <div class="container">
             <h1>REGISTRO DE PACIENTES</h1>
-            <div class="id-container">
-                <label for="id">ID:</label>
-                <input type="text" id="id" name="id" readonly value="123">
-            </div>
-            <div>
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre">
+            <form action="{{ route('guardar_paciente') }}" method="POST">
+                
+                @csrf
+                
+                    <label for="id">ID:</label>
+                    <input type="text" id="id" name="id" readonly value="">
+                </div>
+                <div class="container">
+                <div>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre">
         
-                <label for="apellido_materno">Apellido Materno:</label>
-                <input type="text" id="apellido_materno" name="apellido_materno">
+                    <label for="apellido_paterno">Apellido Paterno:</label>
+                    <input type="text" id="apellido_paterno" name="apellido_paterno">
+    
+                    <label for="apellido_materno">Apellido Materno:</label>
+                    <input type="text" id="apellido_materno" name="apellido_materno">
+                    
+                    <label for="Procedencia">Procedencia:</label>
+                    <input type="text" id="Procedencia" name="Procedencia">
+    
+                    <label for="celular">Celular:</label>
+                    <input type="tel" id="celular" name="celular">
+                    
+                    <label for="edad">Edad:</label>
+                    <input type="text" id="edad" name="edad">
                 
-                <label for="celular">Procedencia:</label>
-                <input type="text" id="Procedencia" name="Procedencia">
+                    <label for="Peso">Peso:</label>
+                    <input type="text" id="Peso" name="Peso">
+                    
+                    
 
-                <label for="celular">Celular:</label>
-                <input type="tel" id="celular" name="celular" pattern="[0-9]{10}">
+                    <label for="sexo">Sexo:</label>
+                    <select id="sexo" name="sexo">
+                        <option value="M">Masculino</option>
+                        <option value="F">Femenino</option>
+                    </select>
+    
+                    <label for="grado_instruccion">Grado de Instrucción:</label>
+                    <textarea id="grado_instruccion" name="grado_instruccion" rows="4"></textarea>
+    
+                </div>
                 
-                <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
-                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento">
-            
-                <label for="Peso">Peso:</label>
-                <input type="text" id="Peso" name="Peso">
-                
-                <label for="Residencia">Residencia:</label>
-                <input type="text" id="Residencia" name="Residencia">
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                    
+                    <label for="Ci">Carnet de Identidad:</label>
+                    <input type="text" id="Ci" name="CI">
+                    
+                    <label for="estado_civil">Estado Civil:</label>
+                    <select id="estado_civil" name="estado_civil">
+                        <option value="soltero">Soltero</option>
+                        <option value="casado">Casado</option>
+                        <option value="divorciado">Divorciado</option>
+                        <option value="viudo">Viudo</option>
+                    </select>
+                    
+                    <label for="TipoSangre">Tipo de Sangre:</label>
+                    <input type="text" id="TipoSangre" name="TipoSangre">
+                    
+                    <label for="ocupacion">Ocupación Actual:</label>
+                    <input type="text" id="ocupacion" name="ocupacion">
+    
+                    <label for="Talla">Talla:</label>
+                    <input type="text" id="Talla" name="Talla">
 
-                <label for="grado_instruccion">grado de Instrucción:</label>
-                <textarea id="grado_instruccion" name="grado_instruccion" rows="4"></textarea>
-
-            </div>
-            
-            <div>
-
-                <label for="apellido_paterno">Apellido Paterno:</label>
-                <input type="text" id="apellido_paterno" name="apellido_paterno">
-                
-                <label for="Ci">Carnet de indentidad:</label>
-                <input type="tel" id="Ci" name="Ci" pattern="[0-9]{10}">
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email">
-                
-                <label for="estado_civil">Estado Civil:</label>
-                <select id="estado_civil" name="estado_civil">
-                    <option value="soltero">Soltero</option>
-                    <option value="casado">Casado</option>
-                    <option value="divorciado">Divorciado</option>
-                    <option value="viudo">Viudo</option>
-                </select>
-                
-                <label for="TipoSangre">Tipo de Sangre:</label>
-                <input type="text" id="TipoSangre" name="TipoSangre">
-                
-                <label for="ocupacion">Ocupación Actual:</label>
-                <input type="text" id="ocupacion" name="ocupacion">
-
-                <label for="Talla">Talla:</label>
-                <input type="text" id="Talla" name="Talla">
-                
-                
-                
-                <label for="detalle">Detalle:</label>
-                <textarea id="detalle" name="detalle" rows="4"></textarea>
-            </div>
-
+                    <label for="Residencia">Residencia:</label>
+                    <input type="text" id="Residencia" name="Residencia">
+                    
+                    <label for="FuenteInformacion">Fuente de Información:</label>
+                    <input type="text" id="FuenteInformacion" name="Fuente_de_Informacion">
+                    
+                    <label for="detalle">Detalle:</label>
+                    <textarea id="detalle" name="detalle" rows="4"></textarea>
+                </div>
+    
                 <button type="submit">Registrar</button>
                 <button type="button" onclick="window.location.href = 'http://localhost/ginecologia/public/admin/registro'">Salir</button>
-
-            
-            
+            </form>
         </div>
-        
     </section>
     <footer class="pie-pagina">
         <div class="grupo-1">
