@@ -1,0 +1,29 @@
+:root {
+    --gradient-start: #ef9e13; /* Naranja oscuro - Color inicial del degradado */
+    --gradient-end: #e74a1b; /* Naranja oscuro - Color final del degradado */
+}
+
+body {
+    background: linear-gradient(to bottom right, var(--gradient-start), var(--gradient-end));
+}
+
+.main-header {
+    background: linear-gradient(to bottom right, var(--gradient-start), var(--gradient-end));
+    color: white; /* Color del texto */
+}
+
+.main-sidebar {
+    background-color: var(--gradient-end); /* Color del sidebar */
+    color: white; /* Color del texto en el sidebar */
+}
+
+.main-footer {
+    background-color: var(--gradient-start); /* Color del footer */
+    color: white; /* Color del texto en el footer */
+}
+
+/* Otros estilos de diseño que desees aplicar */
+.brand-image {
+    width: 40px; /* Ajusta el tamaño según tus necesidades */
+    height: auto; /* Mantén la proporción */
+}
