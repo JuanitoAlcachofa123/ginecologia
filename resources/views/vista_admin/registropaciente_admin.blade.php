@@ -21,7 +21,8 @@
             
             </div>
             
-        </div>
+        </div>  
+
         <div class="table_section">
             <table>
                 <thead>
@@ -44,7 +45,8 @@
                 </thead>
                 <tbody>
                     @foreach($pacientes as $paciente)
-                    <tr>
+                    <tr ondblclick="activarPacienteFormulario({{$paciente->ID_Paciente}})">
+                        
                         <td>{{ $paciente->ID_Paciente }}</td>
                         <td>{{ $paciente->CI }}</td>
                         <td>{{ $paciente->Nombres }}</td>
@@ -58,10 +60,17 @@
                         <td>{{ $paciente->Tipo_de_Sangre }}</td>
                         <td>{{ $paciente->Peso }}</td>
                         <td>{{ $paciente->Talla }}</td>
+
                         <td>
                             <button><i class="fa-solid fa-pen-to-square">Editar</i></button>
                             
                         </td>
+
+                        <td class="tddobleclick" >
+                            <form id="pacienteFormulario{{$paciente->ID_Paciente}}" method="Post" action="/{{$paciente->ID_Paciente}}">
+                                @csrf
+                            </form>
+                        </td>  
                         
                     </tr>
                     @endforeach
@@ -78,8 +87,14 @@
             
         </div>
 
-
     </div>
 </section>
+
+<script>
+    function activarPacienteFormulario(id){
+       var formulario = document.getElementById("pacienteFormulario" + id);
+       formulario.submit();
+    }
+</script>
 @endsection
 

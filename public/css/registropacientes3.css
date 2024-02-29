@@ -92,6 +92,15 @@ th, td{
     text-align: center;
 }
 
+.tddobleclick
+{
+    border-bottom: 1px solid #dddddd;
+    padding: 0px 0px;
+    word-break: break-all;
+    text-align: center;
+    display: none;
+}
+
 tr:hover td{
     color: #cf1d02;
     cursor: pointer;
