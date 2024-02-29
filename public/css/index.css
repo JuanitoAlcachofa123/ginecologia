@@ -156,7 +156,7 @@ nav ul li {
     justify-content: center;
     align-items: center;
     width: 100%; /* Ancho del contenedor */
-    height: 450px; /* Altura del contenedor */
+    height: 300px; /* Altura del contenedor */
     margin: 0;
     padding: 0;
     background-size: cover;
