@@ -10,6 +10,7 @@ class PacienteController extends Controller
     public function guardar(Request $request)
 {
     $paciente = new Paciente();
+    $paciente->ID_Paciente = $request->id;
     $paciente->CI = $request->CI;
     $paciente->Nombres = $request->nombre;
     $paciente->Apellidos = $request->apellido_paterno . ' ' . $request->apellido_materno;
@@ -30,7 +31,47 @@ class PacienteController extends Controller
 
     $paciente->save();
 
+    
+
     return redirect()->back()->with('success', 'Paciente registrado correctamente');
+}
+public function mostrarPacientes()
+    {
+        $pacientes = Paciente::all();
+
+        return view('vista_admin.registropaciente_admin', compact('pacientes'));
+    }
+
+
+    public function update(Request $request, $id)
+    {
+        $paciente = Paciente::find($id);
+        // Asigna los valores recibidos del formulario a los atributos del modelo
+        $paciente->Nombres = $request->Nombres;
+        $paciente->Apellidos = $request->Apellidos;
+        $paciente->Sexo = $request->Sexo;
+        $paciente->Edad = $request->Edad;
+        $paciente->Estado_Civil = $request->EstadoCivil;
+        $paciente->Residencia = $request->Residencia;
+        $paciente->email = $request->Email;
+        $paciente->Celular = $request->Celular;
+        $paciente->Tipo_de_Sangre = $request->TipoSangre;
+        $paciente->Peso = $request->Peso;
+        $paciente->Talla = $request->Talla;
+
+        $paciente->save();
+
+        return redirect()->back()->with('success', 'Paciente actualizado correctamente');
+    }
+
+    public function buscar(Request $request)
+{
+    $search = $request->input('search');
+    $pacientes = Paciente::where('Nombres', 'LIKE', "%{$search}%")
+                        ->orWhere('Apellidos', 'LIKE', "%{$search}%")
+                        ->get();
+
+    return view('vista_admin.registropaciente_admin', compact('pacientes'));
 }
 
 }

@@ -28,41 +28,41 @@
     <section id="main-section">
         <h2>Agregar Receta</h2>
         <div class="container">
-            <div>
-
-               <label for="IdPaciente">Id del paciente:</label>
-                <input type="text" id="IdPaciente" name="IdPaciente" value="intro valor paciente" readonly>
-
-            </div>
-            <div>
-                <label for="CiPaciente">Ci del Paciente:</label>
-                <input type="text" id="CiPaciente" name="CiPaciente">
-                
-
-            </div>
-            
+            <form action="{{ route('guardar_receta') }}" method="POST">
+                @csrf
+                <div>
+                    <label for="IdPaciente">Id del paciente:</label>
+                    <input type="text" id="IdPaciente" name="IdPaciente" value="intro valor paciente" readonly>
+                </div>
+                <div>
+                    <label for="CiPaciente">Ci del Paciente:</label>
+                    <input type="text" id="CiPaciente" name="CiPaciente">
+                </div>
+                <div class="containerreceta">
+                    <div>
+                        <label for="Medicamento">Medicamento:</label>
+                        <input type="text" id="Medicamento" name="Medicamento">
+                        
+                        <label for="Instrucciones">Instrucciones:</label>
+                        <input type="text" id="Instrucciones" name="Instrucciones">
+                        
+                        <label for="Dosis">Dosis:</label>
+                        <input type="text" id="Dosis" name="Dosis">
+                        
+                        <label for="Duracion">Duracion:</label>
+                        <input type="text" id="Duracion" name="Duracion">
+                        
+                        <label for="Fecha_Receta">Fecha Receta:</label>
+                        <input type="date" id="Fecha_Receta" name="Fecha_Receta">
+                        
+                        <label for="detalle">Detalle:</label>
+                        <textarea id="detalle" name="detalle" rows="4"></textarea>
+                    </div>
+                </div>
+                <button type="submit">Registrar</button>
+                <button type="button" onclick="window.location.href = 'http://localhost/ginecologia/public/admin/registro/datos_paciente'">Salir</button>
+            </form>
         </div>
-        <div class="containerreceta">
-            <div>
-
-                <label for="Medicamento">Medicamento:</label>
-                <input type="text" id="Medicamento" name="Medicamento">
-                
-                <label for="Instrucciones">Instrucciones:</label>
-                <input type="text" id="Instrucciones" name="Instrucciones">
-                <label for="Dosis">Dosis:</label>
-                <input type="text" id="Dosis" name="Dosis">
-                <label for="Duracion">Duracion:</label>
-                <input type="text" id="Duracion" name="Duracion">
-                <label for="Fecha_Receta">Fecha Receta:</label>
-                <input type="date" id="Fecha_Receta" name="Fecha_Receta">
-                <label for="detalle">Detalle:</label>
-                <textarea id="detalle" name="detalle" rows="4"></textarea>
-            
-             </div>
-        </div>
-        </div>
-
     </section>
     <footer class="pie-pagina">
         <div class="grupo-1">

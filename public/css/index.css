@@ -633,3 +633,12 @@ color: var(--color-tonalidad-2);
         padding: 35px 0px;
     }
 }
+
+form {
+    display: flex;
+    align-items: center;
+}
+
+form button {
+    margin-left: 5px; /* Ajusta este valor según sea necesario */
+}

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\indexController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PacienteController;
+use App\Http\Controllers\RecetaController;
 
 
 Route::get('/', function () {
@@ -40,7 +41,7 @@ Route::controller(AdminController::class)->group(function(){
 
     Route::get('admin/index',  'header_admin');
 
-    Route::get('admin/registro',  'registro_paciente_admin');
+    //Route::get('admin/registro',  'registro_paciente_admin');
 
     Route::get('admin/registro/paciente',  'añadir_paciente_admin');
 
@@ -48,9 +49,17 @@ Route::controller(AdminController::class)->group(function(){
 
     Route::get('admin/registro/historial',  'añadir_historial_admin');
 
-    Route::get('admin/registro/datos_paciente',  '');
+    Route::get('admin/registro/datos_paciente',  'añadir_datos_paciente_admin');
 
 
 });
 
 Route::post('/guardar_paciente', [PacienteController::class, 'guardar'])->name('guardar_paciente');
+
+Route::post('/guardar_receta', [RecetaController::class, 'guardar'])->name('guardar_receta');
+
+Route::get('admin/registro', [PacienteController::class, 'mostrarPacientes']);
+
+Route::put('admin/paciente/{id}', [PacienteController::class, 'update'])->name('paciente.update');
+
+Route::get('/admin/registro/buscar_paciente', [PacienteController::class, 'buscar'])->name('paciente.buscar');

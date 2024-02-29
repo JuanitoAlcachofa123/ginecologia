@@ -15,7 +15,7 @@
     <img src="{{ asset('img/nom_logo.png') }}" alt="Logo" style="width: 300px; height: auto;">
     <nav class="nav">
         <ul class="nav-links">
-            <li><a href="http://localhost/ginecologia/public/admin/index">Inicio</a></li>
+            <li><a href="http://localhost/ginecologia/public/admin/index">Bienvenido Administrador</a></li>
             
             <li><a class="respli" href="http://localhost/ginecologia/public/contactanos">Contactanos</a></li>
             
