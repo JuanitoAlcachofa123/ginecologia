@@ -33,7 +33,7 @@
             <textarea id="description" name="description" rows="4" required></textarea>
         
             <label for="image">Imagen:</label>
-            <input type="file" id="image" name="image" accept="image/*" required>
+            <input type="file" id="image" name="image" accept="image/*" >
         
             <label for="video">Video (URL):</label>
             <input type="text" id="video" name="video" placeholder="https://www.youtube.com/watch?v=your-video-id">
