@@ -51,6 +51,10 @@ Route::controller(AdminController::class)->group(function(){
 
     Route::get('admin/registro/datos_paciente',  'añadir_datos_paciente_admin');
 
+    Route::get('admin/publicaciones',  'publicaciones');
+
+    Route::get('admin/publicaciones/registro',  'publicaciones_registro');
+
 
 });
 
@@ -63,3 +67,17 @@ Route::get('admin/registro', [PacienteController::class, 'mostrarPacientes']);
 Route::put('admin/paciente/{id}', [PacienteController::class, 'update'])->name('paciente.update');
 
 Route::get('/admin/registro/buscar_paciente', [PacienteController::class, 'buscar'])->name('paciente.buscar');
+
+
+
+//Nuevo
+
+Route::get('/historial/{id}', 'HistorialController@mostrarHistorial')->name('historial.mostrar');
+
+//Hitorial de paciente segun su ID
+
+Route::get('/admin/registro/datos_paciente/{id}', [PacienteController::class, 'mostrarDatosPaciente'])->name('paciente.mostrar_datos');
+
+
+//Receta
+Route::get('/admin/registro/receta/{pacienteId}', [PacienteController::class, 'mostrarFormularioReceta'])->name('paciente.mostrar_receta');

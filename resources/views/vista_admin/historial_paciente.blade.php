@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Datos de Pacientes</title>
+    <title>Datos de Paciente</title>
     <link rel="stylesheet" href="{{ asset('css/index2.css') }}">
 </head>
 <body>
@@ -25,12 +25,36 @@
     </header>
 
     <div class="headerhistorial">
-        <p> Paciente:<span class="nombrePaciente">Maria Sanchez Calle</span></p>
+        <p> Paciente: <span class="nombrePaciente">{{ $paciente->Nombres }} {{ $paciente->Apellidos }}</span></p>
         <a class="botonheadhist" href="http://localhost/ginecologia/public/admin/registro/historial" style="text-decoration: none;">>+ Agregar historial medico</a>
-        <a class="botonheadhist" href="http://localhost/ginecologia/public/admin/registro/receta" style="text-decoration: none;">+ Agregar Receta</a>
+        <a class="botonheadhist" href="{{ route('paciente.mostrar_receta', ['pacienteId' => $paciente->ID_Paciente]) }}" style="text-decoration: none;">+ Agregar Receta</a>
+
+
+    </div>
+
+    <!-- Mostrar todos los datos del paciente en un div -->
+    <div class="gridprintHistorialM">
+    <div  class="conthistprint">
+        <h2>Datos del Paciente</h2>
+        <p>Nombres: <span class="condicionVida" >{{ $paciente->Nombres }}</span></p>
+        <p>Apellidos: <span class="condicionVida" >{{ $paciente->Apellidos }}</span></p>
+        <p>Sexo: <span class="condicionVida" >{{ $paciente->Sexo }}</span></p>
+        <p>Edad: <span class="condicionVida" >{{ $paciente->Edad }}</span></p>
+        <p>Estado Civil: <span class="condicionVida" >{{ $paciente->Estado_Civil }}</span></p>
+        <p>Residencia: <span class="condicionVida" >{{ $paciente->Residencia }}</span></p>
+        <p>Email: <span class="condicionVida" >{{ $paciente->email }}</span></p>
+        <p>Celular: <span class="condicionVida" >{{ $paciente->Celular }}</span></p>
+        <p>Tipo de Sangre: <span class="condicionVida" >{{ $paciente->Tipo_de_Sangre }}</span></p>
+        <p>Peso: <span class="condicionVida" >{{ $paciente->Peso }}</span></p>
+        <p>Talla: <span class="condicionVida" >{{ $paciente->Talla }}</span></p>
+        <p>Detalle: <span class="condicionVida" >{{ $paciente->Detalle }}</span></p>
+        <!-- Agrega los demás campos que desees mostrar -->
+    </div>
     </div>
 
     <section id="main-section">
+
+    
         <div class="contenthistprint">
             <h2>HISTORIAL MÉDICO</h2>
             <div class="gridprintHistorialM">

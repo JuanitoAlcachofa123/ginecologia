@@ -45,7 +45,7 @@
                 </thead>
                 <tbody>
                     @foreach($pacientes as $paciente)
-                    <tr ondblclick="activarPacienteFormulario({{$paciente->ID_Paciente}})">
+                    <tr onclick="redirectToPaciente('{{ $paciente->ID_Paciente }}')">
                         
                         <td>{{ $paciente->ID_Paciente }}</td>
                         <td>{{ $paciente->CI }}</td>
@@ -77,15 +77,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="pagination">
-            <div><i class="fa-solid fa-angles-left"></i></div>
-            <div><i class="fa-solid fa-chevron-left"></i></div>
-            <div>1</div>
-            <div>2</div>
-            <div><i class="fa-solid fa-chevron-right"></i></div>
-            <div><i class="fa-solid fa-angles-right"></i></div>
-            
-        </div>
+        
 
     </div>
 </section>
@@ -94,6 +86,12 @@
     function activarPacienteFormulario(id){
        var formulario = document.getElementById("pacienteFormulario" + id);
        formulario.submit();
+    }
+</script>
+
+<script>
+    function redirectToPaciente(id) {
+       window.location.href = 'http://localhost/ginecologia/public/admin/registro/datos_paciente/' + id;
     }
 </script>
 @endsection

@@ -10,7 +10,7 @@
         <img src="{{ asset('img/nom_logo.png') }}" alt="Logo" style="width: 300px; height: auto;">
         <nav class="nav">
             <ul class="nav-links">
-                <li><a href="http://localhost/ginecologia/public/admin/index">Inicio</a></li>
+                <li><a href="http://localhost/ginecologia/public/admin/index">Bienvenido Administrador</a></li>
                 
                 <li><a class="respli" href="http://localhost/ginecologia/public/contactanos">Contactanos</a></li>
                 
@@ -141,52 +141,22 @@
     </footer>
     <script src="index.js"></script>
 
-    <!--
-    <h1>REGISTRO DE PACIENTES</h1>
-    <div class="id-container">
-        <label for="id">ID:</label>
-        <span id="id-value">1</span>
-    </div>
-    <form>
-        <label for="id">ID:</label>
-        <input type="text" id="id" name="id">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre">
-        <label for="apellido_paterno">Apellido Paterno:</label>
-        <input type="text" id="apellido_paterno" name="apellido_paterno">
-        <label for="apellido_materno">Apellido Materno:</label>
-        <input type="text" id="apellido_materno" name="apellido_materno">
-        <label for="ci">Carnet de Identidad:</label>
-        <input type="text" id="ci" name="ci">
-        <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
-        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento">
-        <label for="celular">Celular:</label>
-        <input type="text" id="celular" name="celular">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
-        <label for="estado_civil">Estado Civil:</label>
-        <select id="estado_civil" name="estado_civil">
-            <option value="soltero">Soltero/a</option>
-            <option value="casado">Casado/a</option>
-            <option value="viudo">Viudo/a</option>
-            <option value="divorciado">Divorciado/a</option>
-        </select>
-        <label for="ocupacion">Ocupación Actual:</label>
-        <input type="text" id="ocupacion" name="ocupacion">
-        <label for="grado_instruccion">Grado de Instrucción:</label>
-        <input type="text" id="grado_instruccion" name="grado_instruccion">
-        <label for="peso">Peso (kg):</label>
-        <input type="text" id="peso" name="peso">
-        <label for="procedencia">Procedencia:</label>
-        <input type="text" id="procedencia" name="procedencia">
-        <label for="residencia">Residencia:</label>
-        <input type="text" id="residencia" name="residencia">
-        <label for="talla">Talla:</label>
-        <input type="text" id="talla" name="talla">
-        <label for="tipo_sangre">Tipo de Sangre:</label>
-        <input type="text" id="tipo_sangre" name="tipo_sangre">
-        <button type="submit">Registrar</button>
-        <button type="button" id="btn-salir">Salir</button>
-    </form>-->
 </body>
 </html>
+
+<script>
+    // Obtener el elemento del mensaje
+    var mensajeElemento = document.getElementById('mensaje');
+
+    // Mostrar el mensaje temporal
+    function mostrarMensaje(mensaje) {
+        // Mostrar el mensaje
+        mensajeElemento.textContent = mensaje;
+        mensajeElemento.classList.add('mostrar');
+
+        // Ocultar el mensaje después de 3 segundos
+        setTimeout(function() {
+            mensajeElemento.classList.remove('mostrar');
+        }, 3000);
+    }
+</script>

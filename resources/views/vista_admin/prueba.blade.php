@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Registro de Pacientes</title>
+    <title>Datos de Pacientes</title>
     <link rel="stylesheet" href="{{ asset('css/index2.css') }}">
 </head>
 <body>
-
     <header class="header">
         <img src="{{ asset('img/nom_logo.png') }}" alt="Logo" style="width: 300px; height: auto;">
         <nav class="nav">
@@ -24,85 +23,97 @@
         <a class="btn" href="http://localhost/ginecologia/public/admin/publicaciones"><div class="button">Publicaciones</div></a>
         <a class="btn" href="http://localhost/ginecologia/public/admin/registro"><div class="button">Registros</div></a>
     </header>
-    
+
+    <div class="headerhistorial">
+        <p> Paciente:<span class="nombrePaciente">Maria Sanchez Calle</span></p>
+        <a class="botonheadhist" href="http://localhost/ginecologia/public/admin/registro/historial" style="text-decoration: none;">>+ Agregar historial medico</a>
+        <a class="botonheadhist" href="http://localhost/ginecologia/public/admin/registro/receta" style="text-decoration: none;">+ Agregar Receta</a>
+    </div>
+
     <section id="main-section">
-        <div class="container">
-            <h1>REGISTRO DE PACIENTES</h1>
-
-            
-            <div class="id-container">
-                <label for="id">ID:</label>
-                <input type="text" id="id" name="id" readonly value="">
-            </div>
-            <div>
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre">
-        
-                <label for="apellido_materno">Apellido Materno:</label>
-                <input type="text" id="apellido_materno" name="apellido_materno">
-                
-                <label for="celular">Procedencia:</label>
-                <input type="text" id="Procedencia" name="Procedencia">
-
-                <label for="celular">Celular:</label>
-                <input type="tel" id="celular" name="celular" >
-                
-                <label for="fecha_nacimiento">Edad:</label>
-                <input type="text" id="fecha_nacimiento" name="fecha_nacimiento">
-            
-                <label for="Peso">Peso:</label>
-                <input type="text" id="Peso" name="Peso">
-                
-                <label for="Residencia">Residencia:</label>
-                <input type="text" id="Residencia" name="Residencia">
-
-                <label for="grado_instruccion">grado de Instrucción:</label>
-                <textarea id="grado_instruccion" name="grado_instruccion" rows="4"></textarea>
-
-            </div>
-            
-            <div>
-
-                <label for="apellido_paterno">Apellido Paterno:</label>
-                <input type="text" id="apellido_paterno" name="apellido_paterno">
-                
-                <label for="Ci">Carnet de indentidad:</label>
-                <input type="tel" id="Ci" name="Ci" >
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email">
-                
-                <label for="estado_civil">Estado Civil:</label>
-                <select id="estado_civil" name="estado_civil">
-                    <option value="soltero">Soltero</option>
-                    <option value="casado">Casado</option>
-                    <option value="divorciado">Divorciado</option>
-                    <option value="viudo">Viudo</option>
-                </select>
-                
-                <label for="TipoSangre">Tipo de Sangre:</label>
-                <input type="text" id="TipoSangre" name="TipoSangre">
-                
-                <label for="ocupacion">Ocupación Actual:</label>
-                <input type="text" id="ocupacion" name="ocupacion">
-
-                <label for="Talla">Talla:</label>
-                <input type="text" id="Talla" name="Talla">
-                
-                
-                
-                <label for="detalle">Detalle:</label>
-                <textarea id="detalle" name="detalle" rows="4"></textarea>
-            </div>
-
-                <button type="submit">Registrar</button>
-                <button type="button" onclick="window.location.href = 'http://localhost/ginecologia/public/admin/registro'">Salir</button>
-
-            
-            
+        <div class="contenthistprint">
+            <h2>HISTORIAL MÉDICO</h2>
+            <div class="gridprintHistorialM">
+<div class="conthistprint">
+<h3>ANTECEDENTES PERSONALES NO PATOLOGICOS</h3><!--texto font weight p bold y span en light-->
+<p>condiciones de vida: <span class="condicionVida" >Lorem, ipsum dolor.</span></p>
+<p>Alimentación: <span class="Alimentación">Lorem, ipsum dolor.</span></p>
+<p>Frecuencia de ejercicio: <span class="FrecuenciaEjercicios" >Lorem ipsum dolor.</span></p>
+<p>Hábitos nocivos: <span class="HabitosNocivos">Lorem ipsum dolor.</span></p>
+<p>Plan terapéutico: <span class="PlanTerapeutico">Lorem ipsum dolor.</span></p>
+<h3>ANAMNESIS Y MOTIVOS DE CONSULTA</h3>
+<p>Motivo de consulta: <span class="MotivoConsulta">Lorem ipsum dolor.</span></p>
+<p>Historia de la enfermedad actual: <span class="HistoriaEnfermedad">Lorem ipsum dolor.</span></p>
+<p>Funciones biológicas: <span class="FuncionesBiologicas">Lorem ipsum dolor.</span></p>
+<h3>EXAMEN FÍSICO</h3>
+<p>Examen clínico general: <span class="ExamenClinicoGeneral">Lorem ipsum dolor.</span></p>
+<p>Examen clínico regional: <span class="ExamenClinicoRegional">Lorem ipsum dolor.</span></p>
+<h3>ANTECEDENTES </h3>
+<p>Alergias: <span class="Alergias">Lorem ipsum dolor.</span></p>
+<p>Antecedentes médicos: <span class="AntecedentesMedicos">Lorem ipsum dolor.</span></p>
+<p>Intervenciones Quirúrgicas: <span class="IntervencionQuirurgicas">Lorem ipsum dolor.</span></p>
+</div>
+<div class="fechacont">
+    <p>fecha: <span class="fechaHistorialM">01/02/2024</span></p>
+</div>
+<div>
+    <a class="boton"  href="contactanos.html">Editar</a>
+    <div class="boton" onclick="imprimirHist()">Imprimir Reporte</div>
+</div>
+</div>
         </div>
-        
+        <div class="ContentRecetasPrint">
+            <h2>RECETAS</h2>
+            <div class="gridrecetas">
+              <div class="tarjeta_ContentRecetasPrint">
+                <div class="gridtarjetareceta">
+                    <div>
+                        <p>Fecha: <span class="FechaRecetas">Lorem ipsum dolor.</span></p>
+                        <p>Medicamento: <span class="Medicamento">Lorem ipsum dolor.</span></p>
+                        <p>Dosis: <span class="Dosis">Lorem ipsum dolor.</span></p>
+                        <p>Duracion: <span class="Duracion">Lorem ipsum dolor.</span></p>
+                        <p>Observaciones: <span class="ObservacionesRecetas">Lorem ipsum dolor.</span></p> 
+                    </div>
+                    <div>
+                        <a class="boton" href="#">Editar</a>
+                        <div class="boton" onclick="imprimirRe()">Imprimir Receta</div>
+                    </div>
+                </div>
+              </div>
+              <div class="tarjeta_ContentRecetasPrint">
+                <div class="gridtarjetareceta">
+                    <div>
+                        <p>Fecha: <span class="FechaRecetas">Lorem ipsum dolor.</span></p>
+                        <p>Medicamento: <span class="Medicamento">Lorem ipsum dolor.</span></p>
+                        <p>Dosis: <span class="Dosis">Lorem ipsum dolor.</span></p>
+                        <p>Duracion: <span class="Duracion">Lorem ipsum dolor.</span></p>
+                        <p>Observaciones: <span class="ObservacionesRecetas">Lorem ipsum dolor.</span></p> 
+                    </div>
+                    <div>
+                        <a class="boton" href="#">Editar</a>
+                        <div class="boton" onclick="imprimirRe()">Imprimir Receta</div>
+                    </div>
+                </div>
+              </div>
+              <div class="tarjeta_ContentRecetasPrint">
+                <div class="gridtarjetareceta">
+                    <div>
+                        <p>Fecha: <span class="FechaRecetas">Lorem ipsum dolor.</span></p>
+                        <p>Medicamento: <span class="Medicamento">Lorem ipsum dolor.</span></p>
+                        <p>Dosis: <span class="Dosis">Lorem ipsum dolor.</span></p>
+                        <p>Duracion: <span class="Duracion">Lorem ipsum dolor.</span></p>
+                        <p>Observaciones: <span class="ObservacionesRecetas">Lorem ipsum dolor.</span></p> 
+                    </div>
+                    <div>
+                        <a class="boton" href="#">Editar</a>
+                        <div class="boton" onclick="imprimirRe()">Imprimir Receta</div>
+                    </div>
+                </div>
+              </div>  
+            </div>
+        </div>
     </section>
+
     <footer class="pie-pagina">
         <div class="grupo-1">
             <div class="box">
@@ -117,15 +128,16 @@
                     <a href="https://www.facebook.com/profile.php?id=100083104093472&mibextid=ZbWKwL" class="fa fa-facebook"></a>
                     <a href="#" class="fa fa-instagram"></a>
                     <a href="#" class="fa fa-youtube"></a>
+
                 </div>
             </div>
             <div class="box">
                 <h2>SOBRE NOSOTROS</h2>
                 <p>Correo:<br> hugalma@hotmail.com</p>
                 <p>Direccion: <br>Av. 6 de Agosto Nº 2548 Edificio LA SANTE 5to Piso</p>
-                <p>Numero telefonico:
-                    <br> +59172046452
-                </p>
+              <p>Numero telefonico:
+                <br> +59172046452
+              </p>
             </div>
         </div>
         <div class="grupo-2">
@@ -133,53 +145,5 @@
         </div>
     </footer>
     <script src="index.js"></script>
-
-    <!--
-    <h1>REGISTRO DE PACIENTES</h1>
-    <div class="id-container">
-        <label for="id">ID:</label>
-        <span id="id-value">1</span>
-    </div>
-    <form>
-        <label for="id">ID:</label>
-        <input type="text" id="id" name="id">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre">
-        <label for="apellido_paterno">Apellido Paterno:</label>
-        <input type="text" id="apellido_paterno" name="apellido_paterno">
-        <label for="apellido_materno">Apellido Materno:</label>
-        <input type="text" id="apellido_materno" name="apellido_materno">
-        <label for="ci">Carnet de Identidad:</label>
-        <input type="text" id="ci" name="ci">
-        <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
-        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento">
-        <label for="celular">Celular:</label>
-        <input type="text" id="celular" name="celular">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
-        <label for="estado_civil">Estado Civil:</label>
-        <select id="estado_civil" name="estado_civil">
-            <option value="soltero">Soltero/a</option>
-            <option value="casado">Casado/a</option>
-            <option value="viudo">Viudo/a</option>
-            <option value="divorciado">Divorciado/a</option>
-        </select>
-        <label for="ocupacion">Ocupación Actual:</label>
-        <input type="text" id="ocupacion" name="ocupacion">
-        <label for="grado_instruccion">Grado de Instrucción:</label>
-        <input type="text" id="grado_instruccion" name="grado_instruccion">
-        <label for="peso">Peso (kg):</label>
-        <input type="text" id="peso" name="peso">
-        <label for="procedencia">Procedencia:</label>
-        <input type="text" id="procedencia" name="procedencia">
-        <label for="residencia">Residencia:</label>
-        <input type="text" id="residencia" name="residencia">
-        <label for="talla">Talla:</label>
-        <input type="text" id="talla" name="talla">
-        <label for="tipo_sangre">Tipo de Sangre:</label>
-        <input type="text" id="tipo_sangre" name="tipo_sangre">
-        <button type="submit">Registrar</button>
-        <button type="button" id="btn-salir">Salir</button>
-    </form>-->
 </body>
 </html>

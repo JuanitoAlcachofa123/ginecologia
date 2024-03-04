@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Paciente;
+use App\Models\Receta;
 
 class PacienteController extends Controller
 {
@@ -73,6 +74,33 @@ public function mostrarPacientes()
 
     return view('vista_admin.registropaciente_admin', compact('pacientes'));
 }
+
+public function mostrarDatosPaciente($id)
+{
+    $paciente = Paciente::find($id);
+
+    if (!$paciente) {
+        return redirect()->back()->with('error', 'Paciente no encontrado');
+    }
+
+    return view('vista_admin.historial_paciente', compact('paciente'));
+}
+
+public function mostrarFormularioReceta($id)
+{
+    $paciente = Paciente::find($id);
+    return view('vista_admin.añadirreceta', ['paciente' => $paciente, 'id' => $id]);
+}
+
+public function mostrarRecetas($pacienteId)
+{
+    $paciente = Paciente::find($pacienteId);
+    $recetas = Receta::where('paciente_id', $pacienteId)->orderBy('fecha', 'desc')->get();
+    return view('vista_admin.historial_paciente', ['paciente' => $paciente, 'recetas' => $recetas]);
+}
+
+
+
 
 }
 

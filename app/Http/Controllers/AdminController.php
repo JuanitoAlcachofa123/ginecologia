@@ -27,7 +27,15 @@ class AdminController extends Controller
     }
 
     public function añadir_datos_paciente_admin(){
-        return view('vista_admin.datospaciente');
+        return view('vista_admin.historial_paciente');
+    }
+
+    public function publicaciones(){
+        return view('vista_admin.publicaciones');
+    }
+
+    public function publicaciones_registro(){
+        return view('vista_admin.publicaciones_registro');
     }
 }
 

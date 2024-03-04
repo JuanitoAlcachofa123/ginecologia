@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Paciente extends Model
 {
+    protected $primaryKey = 'ID_Paciente';
     protected $fillable = [
         'CI',
         'Nombres',
@@ -19,6 +20,11 @@ class Paciente extends Model
         'Residencia',
         'Fuente_de_Informacion',
         'email',
+        'Celular',
+        'Tipo_de_Sangre',
+        'Peso',
+        'Talla',
+        'Detalle',
     ];
 
     public function antecedentesPersonalesNoPatologicos()

@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Registro de Recetas</title>
-    <link rel="stylesheet" href="{{ asset('css/index2.css') }}">
+    <title>Registro de Historial Medico</title>
+    <link rel="stylesheet" href="{{ asset('css/index3.css') }}">
 </head>
 <body>
-
     <header class="header">
         <img src="{{ asset('img/nom_logo.png') }}" alt="Logo" style="width: 300px; height: auto;">
         <nav class="nav">
@@ -24,44 +23,25 @@
         <a class="btn" href="http://localhost/ginecologia/public/admin/publicaciones"><div class="button">Publicaciones</div></a>
         <a class="btn" href="http://localhost/ginecologia/public/admin/registro"><div class="button">Registros</div></a>
     </header>
-    
     <section id="main-section">
-        <h2>Agregar Receta</h2>
-        <div class="container">
-            <form action="{{ route('guardar_receta') }}" method="POST">
-                @csrf
-                <div>
-                    <label for="IdPaciente">Id del paciente:</label>
-                    <span>{{ $id }}</span>
-                    <input type="hidden" id="IdPaciente" name="IdPaciente" value="{{ $id }}">
-                </div>
-                
-                <div class="containerreceta">
-                    <div>
-                        <label for="Medicamento">Medicamento:</label>
-                        <input type="text" id="Medicamento" name="Medicamento">
-                        
-                        <label for="Instrucciones">Instrucciones:</label>
-                        <input type="text" id="Instrucciones" name="Instrucciones">
-                        
-                        <label for="Dosis">Dosis:</label>
-                        <input type="text" id="Dosis" name="Dosis">
-                        
-                        <label for="Duracion">Duracion:</label>
-                        <input type="text" id="Duracion" name="Duracion">
-                        
-                        <label for="Fecha_Receta">Fecha Receta:</label>
-                        <input type="date" id="Fecha_Receta" name="Fecha_Receta">
-                        
-                        <label for="detalle">Detalle:</label>
-                        <textarea id="detalle" name="detalle" rows="4"></textarea>
-                    </div>
-                </div>
-                <button type="submit">Registrar</button>
-                <button type="button" onclick="window.location.href = 'http://localhost/ginecologia/public/admin/registro/datos_paciente'">Salir</button>
-            </form>
-        </div>
-    </section>
+
+        <form class="formart" action="/submit" method="POST" enctype="multipart/form-data">
+            <label for="title">Título:</label>
+            <input  type="text" id="title" name="title" required>
+        
+            <label for="description">Descripción:</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
+        
+            <label for="image">Imagen:</label>
+            <input type="file" id="image" name="image" accept="image/*" required>
+        
+            <label for="video">Video (URL):</label>
+            <input type="text" id="video" name="video" placeholder="https://www.youtube.com/watch?v=your-video-id">
+        
+            <button type="submit">Registrar</button>
+            <button type="button" onclick="window.close()">Salir</button>
+        </form>
+        </section>
     <footer class="pie-pagina">
         <div class="grupo-1">
             <div class="box">
@@ -76,15 +56,16 @@
                     <a href="https://www.facebook.com/profile.php?id=100083104093472&mibextid=ZbWKwL" class="fa fa-facebook"></a>
                     <a href="#" class="fa fa-instagram"></a>
                     <a href="#" class="fa fa-youtube"></a>
+
                 </div>
             </div>
             <div class="box">
                 <h2>SOBRE NOSOTROS</h2>
                 <p>Correo:<br> hugalma@hotmail.com</p>
                 <p>Direccion: <br>Av. 6 de Agosto Nº 2548 Edificio LA SANTE 5to Piso</p>
-                <p>Numero telefonico:
-                    <br> +59172046452
-                </p>
+              <p>Numero telefonico:
+                <br> +59172046452
+              </p>
             </div>
         </div>
         <div class="grupo-2">
@@ -92,7 +73,5 @@
         </div>
     </footer>
     <script src="index.js"></script>
-
-   
 </body>
 </html>

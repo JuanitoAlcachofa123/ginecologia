@@ -8,8 +8,15 @@
     <div class="presentacion"> 
         <div class="grid_cont_present">
             <div class="present_text">
-                <h1 class="present_titulo">¿Quién me atenderá?</h1>
-                <p class="present_descrip">¡Nos complace presentarte a nuestro destacado especialista en Ginecología y Obstetricia, el Dr. ..............! Con años de experiencia y un enfoque compasivo hacia cada paciente, el Dr. ........ se ha dedicado a brindar la más alta calidad de atención médica en el campo de la salud de la mujer.</p>
+                <h1 class="present_titulo">¿Qué puedo hacer como administrador?</h1>
+                <p class="present_descrip">¡Como administrador, tienes acceso a una variedad de funciones importantes para la gestión del sistema! Puedes realizar las siguientes acciones:</p>
+                <ul>
+                    <li>Realizar publicaciones en la página web.</li>
+                    <li>Registrar nuevos pacientes en la base de datos.</li>
+                    <li>Añadir historiales médicos para cada paciente.</li>
+                    <li>Crear y gestionar recetas médicas para los pacientes.</li>
+                    <!-- Agrega más acciones según las funcionalidades de tu sistema -->
+                </ul>
             </div>
             <div class="img_presentacion">
                 <img src="{{ asset('img/ejemplo doctor.jpg') }}" alt="perfil_present">
@@ -70,3 +77,20 @@
     </div>
 </section>
 @endsection
+
+<script>
+    // Obtener el elemento del mensaje
+    var mensajeElemento = document.getElementById('mensaje');
+
+    // Mostrar el mensaje temporal
+    function mostrarMensaje(mensaje) {
+        // Mostrar el mensaje
+        mensajeElemento.textContent = mensaje;
+        mensajeElemento.classList.add('mostrar');
+
+        // Ocultar el mensaje después de 3 segundos
+        setTimeout(function() {
+            mensajeElemento.classList.remove('mostrar');
+        }, 3000);
+    }
+</script>
