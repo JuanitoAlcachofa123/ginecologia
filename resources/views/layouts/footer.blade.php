@@ -27,7 +27,7 @@
         <div class="box">
             <h2>SOBRE NOSOTROS</h2>
             <p>Correo:<br> hugalma@hotmail.com</p>
-            <p>Direccion: <br>Av. 6 de Agosto Nº 2548 Edificio LA SANTE 5to Piso</p>
+            <p>Dirección: <br>Av. 6 de Agosto Nº 2548 Edificio LA SANTE 5to Piso</p>
             <p>Numero telefonico:
                 <br> +59172046452
             </p>

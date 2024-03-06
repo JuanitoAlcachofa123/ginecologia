@@ -82,6 +82,10 @@ Route::get('/historial/{id}', 'HistorialController@mostrarHistorial')->name('his
 
 Route::get('/admin/registro/datos_paciente/{id}', [PacienteController::class, 'mostrarDatosPaciente'])->name('paciente.mostrar_datos');
 
+Route::get('admin/registro/datos_paciente/{id}', [HistorialMedicoController::class, 'mostrarHistorialMedico'])->name('paciente.mostrar_historial');
+
+Route::get('admin/registro/datos_paciente/{id}', [RecetaController::class, 'mostrarRecetas'])->name('paciente.mostrar_recetas');
+
 
 //Receta
 Route::get('/admin/registro/receta/{pacienteId}', [PacienteController::class, 'mostrarFormularioReceta'])->name('paciente.mostrar_receta');

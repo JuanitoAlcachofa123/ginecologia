@@ -27,4 +27,13 @@ class Paciente extends Model
         'Detalle',
     ];
 
+    public function historial_medico()
+    {
+        return $this->hasMany(HistorialMedico::class, 'ID_Paciente');
+    }
+
+    public function recetas()
+    {
+        return $this->hasMany(Receta::class, 'ID_Paciente');
+    }
 }

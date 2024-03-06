@@ -40,7 +40,7 @@
                         <th>Tipo de Sangre</th>
                         <th>Peso</th>
                         <th>Talla</th>
-                        <th>Editar</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
@@ -61,10 +61,7 @@
                         <td>{{ $paciente->Peso }}</td>
                         <td>{{ $paciente->Talla }}</td>
 
-                        <td>
-                            <button><i class="fa-solid fa-pen-to-square">Editar</i></button>
-                            
-                        </td>
+                        
 
                         <td class="tddobleclick" >
                             <form id="pacienteFormulario{{$paciente->ID_Paciente}}" method="Post" action="/{{$paciente->ID_Paciente}}">

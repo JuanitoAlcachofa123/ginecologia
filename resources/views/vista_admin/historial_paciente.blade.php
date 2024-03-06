@@ -9,9 +9,9 @@
         <img src="{{ asset('img/nom_logo.png') }}" alt="Logo" style="width: 300px; height: auto;">
         <nav class="nav">
             <ul class="nav-links">
-                <li><a href="http://localhost/ginecologia/public/admin/index">Inicio</a></li>
+                <li><a href="http://localhost/ginecologia/public/admin/index">Volver al Inicio</a></li>
                 
-                <li><a class="respli" href="http://localhost/ginecologia/public/contactanos">Contactanos</a></li>
+                <li><a class="respli" href="http://localhost/ginecologia/public/contactanos">Contáctanos</a></li>
                 
             </ul>
         </nav>
@@ -59,81 +59,85 @@
             <h2>HISTORIAL MÉDICO</h2>
             <div class="gridprintHistorialM">
 <div class="conthistprint">
-<h3>ANTECEDENTES PERSONALES NO PATOLOGICOS</h3><!--texto font weight p bold y span en light-->
-<p>condiciones de vida: <span class="condicionVida" >Lorem, ipsum dolor.</span></p>
-<p>Alimentación: <span class="Alimentación">Lorem, ipsum dolor.</span></p>
-<p>Frecuencia de ejercicio: <span class="FrecuenciaEjercicios" >Lorem ipsum dolor.</span></p>
-<p>Hábitos nocivos: <span class="HabitosNocivos">Lorem ipsum dolor.</span></p>
-<p>Plan terapéutico: <span class="PlanTerapeutico">Lorem ipsum dolor.</span></p>
-<h3>ANAMNESIS Y MOTIVOS DE CONSULTA</h3>
-<p>Motivo de consulta: <span class="MotivoConsulta">Lorem ipsum dolor.</span></p>
-<p>Historia de la enfermedad actual: <span class="HistoriaEnfermedad">Lorem ipsum dolor.</span></p>
-<p>Funciones biológicas: <span class="FuncionesBiologicas">Lorem ipsum dolor.</span></p>
-<h3>EXAMEN FÍSICO</h3>
-<p>Examen clínico general: <span class="ExamenClinicoGeneral">Lorem ipsum dolor.</span></p>
-<p>Examen clínico regional: <span class="ExamenClinicoRegional">Lorem ipsum dolor.</span></p>
-<h3>ANTECEDENTES </h3>
-<p>Alergias: <span class="Alergias">Lorem ipsum dolor.</span></p>
-<p>Antecedentes médicos: <span class="AntecedentesMedicos">Lorem ipsum dolor.</span></p>
-<p>Intervenciones Quirúrgicas: <span class="IntervencionQuirurgicas">Lorem ipsum dolor.</span></p>
+    
+    @if(isset($historial) && !$historial->isEmpty())
+    @if($historialItem = $historial->first())
+        <h3>ANTECEDENTES PERSONALES NO PATOLOGICOS</h3>
+        
+        <p>Condiciones de vida: <span class="condicionVida">{{ $historialItem->Trabajo }}</span></p>
+        <p>Condiciones de Vivienda: <span class="condicionVida">{{ $historialItem->Condiciones_de_Vivienda }}</span></p>
+        <p>Alimentación: <span class="condicionVida">{{ $historialItem->Alimentacion }}</span></p>
+        <p>Frecuencia de ejercicio: <span class="condicionVida">{{ $historialItem->Frecuencia_de_Ejercicio }}</span></p>
+        <p>Hábitos nocivos: <span class="condicionVida">{{ $historialItem->Habitos_Nocivos }}</span></p>
+        <h3>ANTECEDENTES PERSONALES PATOLOGICOS</h3>
+        <p>Alergias y Reacciones Adversas Farmacológicas: <span class="condicionVida">{{ $historialItem->Alergias_Reacciones_Adversas_Farmacologicas }}</span></p>
+        <p>Antecedentes Médicos: <span class="condicionVida">{{ $historialItem->Antecedentes_Medicos }}</span></p>
+        <p>Intervenciones Quirúrgicas y Accidentes: <span class="condicionVida">{{ $historialItem->Intervenciones_Quirurgicas_Accidentes }}</span></p>
+        <h3>ANTECEDENTES FAMILIARES</h3>
+        <p>Antecedentes Gineco Obstétricos: <span class="condicionVida">{{ $historialItem->Antecedentes_Gineco_Obstetricos }}</span></p>
+        <h3>ANAMNESIS Y MOTIVOS DE CONSULTA</h3>
+        <p>Motivo de Consulta: <span class="condicionVida">{{ $historialItem->Motivo_de_Consulta }}</span></p>
+        <p>Historia de la Enfermedad Actual: <span class="condicionVida">{{ $historialItem->Historia_de_la_Enfermedad_Actual }}</span></p>
+        <p>Funciones Biológicas: <span class="condicionVida">{{ $historialItem->Funciones_Biologicas }}</span></p>
+        <h3>EXAMEN FÍSICO</h3>
+        <p>Examen Clínico General: <span class="condicionVida">{{ $historialItem->Examen_Clinico_General }}</span></p>
+        <p>Examen Clínico Regional: <span class="condicionVida">{{ $historialItem->Examen_Clinico_Regional }}</span></p>
+        <h3>DIAGNÓSTICO</h3>
+        <p>Diagnóstico: <span class="condicionVida">{{ $historialItem->Diagnostico }}</span></p>
+        <h3>PLAN TERAPÉUTICO</h3>
+        <p>Plan Terapéutico: <span class="condicionVida">{{ $historialItem->Plan_Terapeutico }}</span></p>
+    
 </div>
 <div class="fechacont">
-    <p>fecha: <span class="fechaHistorialM">01/02/2024</span></p>
+    <p>Fecha: <span class="fechaHistorialM">{{ $historialItem->fecha }}</span></p>
 </div>
+
 <div>
     <a class="boton"  href="contactanos.html">Editar</a>
-    <div class="boton" onclick="imprimirHist()">Imprimir Reporte</div>
+    <div class="boton" onclick="imprimirHistorial()">Imprimir Reporte</div>
+
 </div>
+@endif
+@else
+    <p style="text-align: center; font-weight: bold; color: red; font-size: 1.2em;">No se encontró historial médico para este paciente.</p>
+@endif
 </div>
         </div>
         <div class="ContentRecetasPrint">
+            
             <h2>RECETAS</h2>
             <div class="gridrecetas">
-              <div class="tarjeta_ContentRecetasPrint">
-                <div class="gridtarjetareceta">
-                    <div>
-                        <p>Fecha: <span class="FechaRecetas">Lorem ipsum dolor.</span></p>
-                        <p>Medicamento: <span class="Medicamento">Lorem ipsum dolor.</span></p>
-                        <p>Dosis: <span class="Dosis">Lorem ipsum dolor.</span></p>
-                        <p>Duracion: <span class="Duracion">Lorem ipsum dolor.</span></p>
-                        <p>Observaciones: <span class="ObservacionesRecetas">Lorem ipsum dolor.</span></p> 
+                @if(isset($recetas) && !$recetas->isEmpty())
+                @if($receta = $recetas->first())
+                <div class="tarjeta_ContentRecetasPrint">
+                    <div class="gridtarjetareceta">
+                        <div>
+                            <p>Fecha: <span class="FechaRecetas">{{ $receta->fecha }}</span></p>
+                            <p>Medicamento: <span class="Medicamento">{{ $receta->medicamento }}</span></p>
+                            <p>Instrucciones: <span class="Dosis">{{ $receta->instrucciones }}</span></p>
+                            <p>Dosis: <span class="Dosis">{{ $receta->dosis }}</span></p>
+                            <p>Duración: <span class="Duracion">{{ $receta->duracion }}</span></p>
+                            <p>Observaciones: <span class="ObservacionesRecetas">{{ $receta->observaciones }}</span></p>
+                            
+                        </div>
+                        
+                        <div>
+                            <a class="boton" href="#">Editar</a>
+                            <div class="boton" onclick="imprimirRe()">Imprimir Receta</div>
+
+                        </div>
+                        @endif
+                            @else
+                                <p style="text-align: center; font-weight: bold; color: red; font-size: 1.2em;">No se encontró receta para este paciente.</p>
+                            @endif
+                        
                     </div>
-                    <div>
-                        <a class="boton" href="#">Editar</a>
-                        <div class="boton" onclick="imprimirRe()">Imprimir Receta</div>
-                    </div>
+                   
                 </div>
-              </div>
-              <div class="tarjeta_ContentRecetasPrint">
-                <div class="gridtarjetareceta">
-                    <div>
-                        <p>Fecha: <span class="FechaRecetas">Lorem ipsum dolor.</span></p>
-                        <p>Medicamento: <span class="Medicamento">Lorem ipsum dolor.</span></p>
-                        <p>Dosis: <span class="Dosis">Lorem ipsum dolor.</span></p>
-                        <p>Duracion: <span class="Duracion">Lorem ipsum dolor.</span></p>
-                        <p>Observaciones: <span class="ObservacionesRecetas">Lorem ipsum dolor.</span></p> 
-                    </div>
-                    <div>
-                        <a class="boton" href="#">Editar</a>
-                        <div class="boton" onclick="imprimirRe()">Imprimir Receta</div>
-                    </div>
-                </div>
-              </div>
-              <div class="tarjeta_ContentRecetasPrint">
-                <div class="gridtarjetareceta">
-                    <div>
-                        <p>Fecha: <span class="FechaRecetas">Lorem ipsum dolor.</span></p>
-                        <p>Medicamento: <span class="Medicamento">Lorem ipsum dolor.</span></p>
-                        <p>Dosis: <span class="Dosis">Lorem ipsum dolor.</span></p>
-                        <p>Duracion: <span class="Duracion">Lorem ipsum dolor.</span></p>
-                        <p>Observaciones: <span class="ObservacionesRecetas">Lorem ipsum dolor.</span></p> 
-                    </div>
-                    <div>
-                        <a class="boton" href="#">Editar</a>
-                        <div class="boton" onclick="imprimirRe()">Imprimir Receta</div>
-                    </div>
-                </div>
-              </div>  
+                
+                
+              
+              
             </div>
         </div>
     </section>
@@ -158,7 +162,7 @@
             <div class="box">
                 <h2>SOBRE NOSOTROS</h2>
                 <p>Correo:<br> hugalma@hotmail.com</p>
-                <p>Direccion: <br>Av. 6 de Agosto Nº 2548 Edificio LA SANTE 5to Piso</p>
+                <p>Dirección: <br>Av. 6 de Agosto Nº 2548 Edificio LA SANTE 5to Piso</p>
               <p>Numero telefonico:
                 <br> +59172046452
               </p>
@@ -168,6 +172,31 @@
             <small>&copy; 2024 <b>ginecologiayobstetricia</b> - Todos los Derechos Reservados.</small>
         </div>
     </footer>
+    <script>
+        function imprimirHist() {
+            window.print();
+        }
+        function imprimirRe() {
+            window.print();
+        }
+    </script>
+
+<script>
+    function imprimirHistorial() {
+        // Oculta el contenido que no quieres imprimir
+        document.querySelector('header').style.display = 'none';
+        document.querySelector('footer').style.display = 'none';
+        document.querySelector('#main-section').style.padding = '0';
+
+        // Imprime solo la sección del historial médico
+        window.print();
+
+        // Restaura el contenido oculto después de imprimir
+        document.querySelector('header').style.display = 'block';
+        document.querySelector('footer').style.display = 'block';
+        document.querySelector('#main-section').style.padding = '20px';
+    }
+</script>
     <script src="index.js"></script>
 </body>
 </html>

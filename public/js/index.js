@@ -57,3 +57,10 @@ document.getElementById("searchButton").addEventListener("click", function() {
     const filteredPosts = posts.filter(post => post.title.toLowerCase().includes(searchTerm));
     renderCards(".latest-posts", filteredPosts);
 });
+
+function imprimirHist() {
+    window.print();
+}
+function imprimirRe() {
+    window.print();
+}

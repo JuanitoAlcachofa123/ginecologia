@@ -9,9 +9,9 @@
         <img src="{{ asset('img/nom_logo.png') }}" alt="Logo" style="width: 300px; height: auto;">
         <nav class="nav">
             <ul class="nav-links">
-                <li><a href="http://localhost/ginecologia/public/admin/index">Bienvenido Administrador</a></li>
+                <li><a href="http://localhost/ginecologia/public/admin/index">Volver al Inicio</a></li>
                 
-                <li><a class="respli" href="http://localhost/ginecologia/public/contactanos">Contactanos</a></li>
+                <li><a class="respli" href="http://localhost/ginecologia/public/contactanos">Contáctanos</a></li>
                 
             </ul>
         </nav>
@@ -49,8 +49,8 @@
                 <label for="condiciones">Condiciones de vivienda:</label>
                 <input type="text" id="Condiciones_de_Vivienda" name="Condiciones_de_Vivienda">
 
-                <label for="condiciones">Condiciones de vivienda:</label>
-                <input type="text" id="Condiciones_de_Vivienda" name="Condiciones_de_Vivienda">
+                <label for="condiciones">Habitos Nocivos:</label>
+                <input type="text" id="Habitos_Nocivos" name="Habitos_Nocivos">
 
                 <label for="habitosnocimos">Frecuencia de Ejercicios:</label>
                 <input type="text" id="Frecuencia_de_Ejercicio" name="Frecuencia_de_Ejercicio">
@@ -121,7 +121,7 @@
             <div class="box">
                 <h2>SOBRE NOSOTROS</h2>
                 <p>Correo:<br> hugalma@hotmail.com</p>
-                <p>Direccion: <br>Av. 6 de Agosto Nº 2548 Edificio LA SANTE 5to Piso</p>
+                <p>Dirección: <br>Av. 6 de Agosto Nº 2548 Edificio LA SANTE 5to Piso</p>
               <p>Numero telefonico:
                 <br> +59172046452
               </p>

@@ -17,7 +17,7 @@
         <ul class="nav-links">
             <li><a href="http://localhost/ginecologia/public/index">Inicio</a></li>
             <li><a href="http://localhost/ginecologia/public/sobre_nosotros">Sobre Nosotros</a></li>
-            <li><a class="respli" href="http://localhost/ginecologia/public/contactanos">Contactanos</a></li>
+            <li><a class="respli" href="http://localhost/ginecologia/public/contactanos">Contáctanos</a></li>
             
         </ul>
     </nav>

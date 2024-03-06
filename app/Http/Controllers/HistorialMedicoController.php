@@ -43,4 +43,17 @@ public function mostrarFormularioHistorial($id)
     $paciente = Paciente::find($id);
     return view('vista_admin.añadirhistorial', ['paciente' => $paciente, 'id' => $id]);
 }
+
+
+public function mostrarHistorialMedico($id)
+{
+    $paciente = Paciente::find($id);
+    $historial = $paciente->historial_medico; // Obtener todos los historiales médicos del paciente
+
+    return view('vista_admin.historial_paciente', ['paciente' => $paciente, 'historial' => $historial]);
 }
+
+
+
+}
+

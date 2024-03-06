@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Receta;
 
+use App\Models\Paciente;
+
 class RecetaController extends Controller
 {
     public function guardar(Request $request)
@@ -24,4 +26,15 @@ class RecetaController extends Controller
 
         return redirect()->back()->with('success', 'Receta agregada correctamente');
     }
+
+    public function mostrarRecetas($id)
+{
+    $paciente = Paciente::find($id);
+    $recetas = $paciente->recetas;
+    $historial = $paciente->historial_medico; // Asegúrate de que esta línea obtenga el historial del paciente
+
+    return view('vista_admin.historial_paciente', ['paciente' => $paciente, 'recetas' => $recetas, 'historial' => $historial]);
 }
+
+}
+
