@@ -99,8 +99,13 @@ public function mostrarRecetas($pacienteId)
     return view('vista_admin.historial_paciente', ['paciente' => $paciente, 'recetas' => $recetas]);
 }
 
+//historial
 
-
+public function mostrarFormularioHistorial($id)
+{
+    $paciente = Paciente::find($id);
+    return view('vista_admin.añadirhistorial', ['paciente' => $paciente, 'id' => $id]);
+}
 
 }
 

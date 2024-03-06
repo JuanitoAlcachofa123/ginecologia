@@ -26,7 +26,7 @@
 
     <div class="headerhistorial">
         <p> Paciente: <span class="nombrePaciente">{{ $paciente->Nombres }} {{ $paciente->Apellidos }}</span></p>
-        <a class="botonheadhist" href="http://localhost/ginecologia/public/admin/registro/historial" style="text-decoration: none;">>+ Agregar historial medico</a>
+        <a class="botonheadhist" href="{{ route('paciente.mostrar_historial', ['pacienteId' => $paciente->ID_Paciente]) }}" style="text-decoration: none;">+ Agregar historial medico</a>
         <a class="botonheadhist" href="{{ route('paciente.mostrar_receta', ['pacienteId' => $paciente->ID_Paciente]) }}" style="text-decoration: none;">+ Agregar Receta</a>
 
 

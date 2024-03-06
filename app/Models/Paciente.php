@@ -27,48 +27,4 @@ class Paciente extends Model
         'Detalle',
     ];
 
-    public function antecedentesPersonalesNoPatologicos()
-    {
-        return $this->hasOne(AntecedentesPersonalesNoPatologico::class);
-    }
-
-    public function antecedentesPersonalesPatologicos()
-    {
-        return $this->hasOne(AntecedentesPersonalesPatologico::class);
-    }
-
-    public function antecedentesFamiliares()
-    {
-        return $this->hasOne(AntecedentesFamiliares::class);
-    }
-
-    public function anamnesisYMotivoDeConsulta()
-    {
-        return $this->hasOne(AnamnesisYMotivoDeConsulta::class);
-    }
-
-    public function examenFisico()
-    {
-        return $this->hasOne(ExamenFisico::class);
-    }
-
-    public function diagnostico()
-    {
-        return $this->hasOne(Diagnostico::class);
-    }
-
-    public function planTerapeutico()
-    {
-        return $this->hasOne(PlanTerapeutico::class);
-    }
-
-    public function login()
-    {
-        return $this->hasOne(Login::class);
-    }
-
-    public function recetas()
-    {
-        return $this->hasMany(Receta::class);
-    }
 }

@@ -5,6 +5,7 @@ use App\Http\Controllers\indexController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PacienteController;
 use App\Http\Controllers\RecetaController;
+use App\Http\Controllers\HistorialMedicoController;
 
 
 Route::get('/', function () {
@@ -62,6 +63,9 @@ Route::post('/guardar_paciente', [PacienteController::class, 'guardar'])->name('
 
 Route::post('/guardar_receta', [RecetaController::class, 'guardar'])->name('guardar_receta');
 
+Route::post('/guardar_historial', [HistorialMedicoController::class, 'guardarHistorial'])->name('guardar_historial');
+
+
 Route::get('admin/registro', [PacienteController::class, 'mostrarPacientes']);
 
 Route::put('admin/paciente/{id}', [PacienteController::class, 'update'])->name('paciente.update');
@@ -81,3 +85,5 @@ Route::get('/admin/registro/datos_paciente/{id}', [PacienteController::class, 'm
 
 //Receta
 Route::get('/admin/registro/receta/{pacienteId}', [PacienteController::class, 'mostrarFormularioReceta'])->name('paciente.mostrar_receta');
+
+Route::get('/admin/registro/historial/{pacienteId}', [PacienteController::class, 'mostrarFormularioHistorial'])->name('paciente.mostrar_historial');

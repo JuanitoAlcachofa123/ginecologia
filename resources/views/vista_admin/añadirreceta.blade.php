@@ -58,7 +58,8 @@
                     </div>
                 </div>
                 <button type="submit">Registrar</button>
-                <button type="button" onclick="window.location.href = 'http://localhost/ginecologia/public/admin/registro/datos_paciente'">Salir</button>
+                <button type="button" onclick="window.history.back();" id="btnSalir">Salir</button>
+
             </form>
         </div>
     </section>

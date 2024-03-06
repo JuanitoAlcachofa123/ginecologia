@@ -25,98 +25,81 @@
     </header>
     <section id="main-section">
         <h2>Agregar Historial Medico</h2>
-        <div class="container">
-            <div>
+        <form action="{{ route('guardar_historial') }}" method="POST">
+            @csrf
+            <div class="container">
+                <label for="IdPaciente">Id del paciente:</label>
+                <input type="text" id="IdPaciente" name="IdPaciente" value="{{ $id }}" readonly>
 
-               <label for="IdPaciente">Id del paciente:</label>
-                <input type="text" id="IdPaciente" name="IdPaciente" value="intro valor paciente" readonly>
+                <label for="PlamTerapeutico">Plan Terapéutico:</label>
+                <input type="text" id="PlamTerapeutico" name="Plan_Terapeutico">
 
-                <label for="PlamTerapeutico">Plan Terapeutico:</label>
-                <input type="text" id="PlamTerapeutico" name="PlamTerapeutico">
-            </div>
-            <div>
-                <label for="apellido_materno">Apellido Materno:</label>
-                <input type="text" id="apellido_materno" name="apellido_materno">
-                
-
+                <label for="Fecha_Receta">Fecha:</label>
+                <input type="date" id="fecha" name="fecha">
             </div>
             
-        </div>
-        <h2>antecedentes personales no patologicos</h2> 
-        <div class="container">
-            <div>
-                
+            <h2>Antecedentes Personales no Patológicos</h2> 
+            <div class="container">
                 <label for="Trabajo">Trabajo:</label>
                 <input type="text" id="Trabajo" name="Trabajo">
 
-                <label for="himentacion"> himentacion:</label>
-                <input type="text" id="himentacion" name="himentacion">
+                <label for="himentacion">Alimentación:</label>
+                <input type="text" id="Alimentacion" name="Alimentacion">
 
-            </div>
-            <div>
-                <label for="condiciones">condiciones:</label>
-                <input type="text" id="condiciones" name="condiciones">
-                <label for="condiciones">condiciones:</label>
-                <input type="text" id="condiciones" name="condiciones">
-                <label for="habitosnocimos">habitos nocivos:</label>
-                <input type="text" id="habitosnocimos" name="habitosnocimos">        
+                <label for="condiciones">Condiciones de vivienda:</label>
+                <input type="text" id="Condiciones_de_Vivienda" name="Condiciones_de_Vivienda">
 
-            </div>
-        </div>
-        <h2>antecedentes personales patologicos</h2> 
-        <div class="container">
-            <div>
-                
-                <label for="IntervencionesQ">Intervenciones quirurjicas:</label>
-                <input type="text" id="IntervencionesQ" name="IntervencionesQ">
-<!--modificado-->
-                <label for="alergias"> alergias:</label>
-                <input type="text" id="alergias" name="alergias">
+                <label for="condiciones">Condiciones de vivienda:</label>
+                <input type="text" id="Condiciones_de_Vivienda" name="Condiciones_de_Vivienda">
 
+                <label for="habitosnocimos">Frecuencia de Ejercicios:</label>
+                <input type="text" id="Frecuencia_de_Ejercicio" name="Frecuencia_de_Ejercicio">
             </div>
-            <div>
-                <label for="antecendentesMed">antecedentes medicos:</label>
-                <input type="text" id="antecendentesMed" name="antecendentesMed">
-            </div>
-        </div>
-        <h2>anemnesis y motivo de la consulta</h2> 
-        <div class="container">
-            <div>
-                
-                <label for="MotivoConsul">motivo de la consulta:</label>
-                <input type="text" id="MotivoConsul" name="MotivoConsul">
+            
+            <h2>Antecedentes Personales Patológicos</h2> 
+            <div class="container">
+                <label for="IntervencionesQ">Intervenciones quirúrgicas:</label>
+                <input type="text" id="Intervenciones_Quirurgicas_Accidentes" name="Intervenciones_Quirurgicas_Accidentes">
 
-                <label for="HistoriaEnferm"> historia de la enfermedad actual:</label>
-                <input type="text" id="HistoriaEnferm" name="HistoriaEnferm">
+                <label for="alergias">Alergias:</label>
+                <input type="text" id="Alergias_Reacciones_Adversas_Farmacologicas" name="Alergias_Reacciones_Adversas_Farmacologicas">
 
+                <label for="antecendentesMed">Antecedentes médicos:</label>
+                <input type="text" id="Antecedentes_Medicos" name="Antecedentes_Medicos">
             </div>
-            <div>
-                <label for="FuncionesBio">Funciones biologicas:</label>
-                <input type="text" id="FuncionesBio" name="FuncionesBio">
-            </div>
+            
+            <h2>Anamnesis y Motivo de la Consulta</h2> 
+            <div class="container">
+                <label for="MotivoConsul">Motivo de la consulta:</label>
+                <input type="text" id="Motivo_de_Consulta" name="Motivo_de_Consulta">
 
-        </div>
-        <h2>examen fisico</h2> 
-        <div class="container">
-            <div>
-                
-                <label for="ExamenCliGeneral">examen clinico General:</label>
-                <input type="text" id="ExamenCliGeneral" name="ExamenCliGeneral">
+                <label for="HistoriaEnferm">Historia de la enfermedad actual:</label>
+                <input type="text" id="Historia_de_la_Enfermedad_Actual" name="Historia_de_la_Enfermedad_Actual">
 
+                <label for="FuncionesBio">Funciones biológicas:</label>
+                <input type="text" id="Funciones_Biologicas" name="Funciones_Biologicas">
             </div>
-            <div>
-                <label for="ExamenFisRegional">Examen fisico regional:</label>
-                <input type="text" id="ExamenFisRegional" name="ExamenFisRegional">
-            </div>
-            <label for="Diagnostico">diagnostico:</label>
-            <textarea id="detalle" name="detalle" rows="4" style="resize: none;"></textarea>
-            <label for="ExamenCliGeneral">examen clinico General:</label>
-            <textarea id="detalle" name="detalle" rows="4" readonly style="resize: none;"></textarea>
+            
+            <h2>Examen Físico</h2> 
+            <div class="container">
+                <label for="ExamenCliGeneral">Examen clínico general:</label>
+                <input type="text" id="Examen_Clinico_General" name="Examen_Clinico_General">
 
+                <label for="ExamenFisRegional">Examen físico regional:</label>
+                <input type="text" id="Examen_Clinico_Regional" name="Examen_Clinico_Regional">
+
+                <label for="Diagnostico">Diagnóstico:</label>
+                <textarea id="Diagnostico" name="Diagnostico" rows="4"></textarea>
+
+                <label for="AntecedentesGinecoObstetrico">Antecedentes Gineco Obstétrico:</label>
+                <textarea id="Antecedentes_Gineco_Obstetricos" name="Antecedentes_Gineco_Obstetricos" rows="4" ></textarea>
+            
+            
             <button type="submit">Registrar</button>
-            <button type="button" onclick="window.close()">Salir</button>
-        </div>
+            <button type="button" onclick="window.history.back();" id="btnSalir">Salir</button>
 
+        </div>
+        </form>
     </section>
     <footer class="pie-pagina">
         <div class="grupo-1">
