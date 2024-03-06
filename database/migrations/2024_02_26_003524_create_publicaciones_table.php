@@ -10,10 +10,12 @@ class CreatePublicacionesTable extends Migration
     {
         Schema::create('publicaciones', function (Blueprint $table) {
             $table->id('id_publicacion');
+            $table->string('titulo', 100);
             $table->string('descripcion', 200);
             $table->date('fecha');
             $table->time('hora');
-            $table->binary('multimedia')->nullable();
+            $table->binary('multimedia')->nullable(); // Cambiado de blob a binary
+            $table->string('video_link')->nullable(); 
             $table->unsignedBigInteger('id_medico');
             $table->foreign('id_medico')->references('id_medico')->on('medico');
             $table->timestamps();
